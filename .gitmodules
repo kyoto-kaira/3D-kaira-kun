@@ -1,0 +1,3 @@
+[submodule "AnimatedDrawings"]
+	path = AnimatedDrawings
+	url = https://github.com/kyoto-kaira/AnimatedDrawings.git
