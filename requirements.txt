@@ -1,0 +1,9 @@
+-e ./AnimatedDrawings
+setuptools==75.3.0
+spacy==3.7.5
+smplx==0.1.28
+matplotlib==3.3.4
+streamlit==1.40.0
+deep-translator==1.11.4
+git+https://github.com/openai/CLIP.git@dcba3cb
+git+https://github.com/nico-von-huene/chumpy.git@4228d70
