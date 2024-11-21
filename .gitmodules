@@ -1,3 +1,9 @@
 [submodule "AnimatedDrawings"]
 	path = AnimatedDrawings
 	url = https://github.com/kyoto-kaira/AnimatedDrawings.git
+[submodule "motion-diffusion-model"]
+	path = motion-diffusion-model
+	url = https://github.com/kyoto-kaira/motion-diffusion-model.git
+[submodule "Motion"]
+	path = Motion
+	url = https://github.com/kyoto-kaira/Motion.git
