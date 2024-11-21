@@ -1,32 +1,23 @@
-# moving-kaira-kun
+# 動くKaiRAくん
+## Dockerでの実行方法
 
-## Environment setup
+```
+git clone --recurse-submodules https://github.com/kyoto-kaira/moving-kaira-kun.git
+cd moving-kaira-kun
+docker build -t moving-kaira-kun .
+docker run -p 8501:8501 moving-kaira-kun
+```
 
-```bash
-uv venv -p 3.9
+## 仮想環境での動かし方
+
+- ffmpegが必要です。
+
+```
+git clone --recurse-submodules https://github.com/kyoto-kaira/moving-kaira-kun.git
+cd moving-kaira-kun
+uv venv -p 3.9.6
 source ./venv/bin/activate
-uv pip install setuptools
-uv pip install -e AnimatedDrawings/.
-uv pip install spacy
-uv pip install smplx
-uv pip install matplotlib==3.3.4
-uv pip install streamlit
-uv pip install deep-translator
-uv pip install git+https://github.com/openai/CLIP.git
-uv pip install git+https://github.com/nico-von-huene/chumpy.git
-# python -m spacy download en_core_web_sm
+uv pip install -r requirements.txt
+streamlit run app.py
 ```
 
-## Running the code
-
-```bash
-# Text to motion(npy)
-cd motion-diffusion-model
-python -m sample.generate --model_path ./save/humanml_trans_enc_512_50steps/model000750000.pt --text_prompt "move violently" --num_repetitions 1
-# Motion(npy) to Motion(bvh)
-cd ..
-python npy_to_bvh.py --prompt "move violently"
-# Motion(bvh) to Animation(mp4)
-cd AnimatedDrawings
-python export_mp4_example.py
-```
